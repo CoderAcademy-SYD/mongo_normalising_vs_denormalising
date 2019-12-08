@@ -2,12 +2,14 @@
 
 <a href="/books/new">Create New Book</a>
 
+{{!-- The 'this' in this context refers to the specific book being handled at the time in the loop --}}
+
 {{#each books}}
-    <div>
-        <p>Name: {{ this.name }}</p>
-    </div>
-    <a href="/books/{{this._id}}">View Book</a>
-    <a href="/books/{{this._id}}?_method=DELETE">Delete Book</a>
-    <hr />
+<div>
+    <p>Name: {{ this.name }}</p>
+</div>
+<a href="/books/{{this._id}}">View Book</a>
+<a href="/books/{{this._id}}?_method=DELETE">Delete Book</a>
+<hr />
 
 {{/each}}

@@ -1,21 +1,29 @@
-const express = require("express");
-const router = express.Router();
-const AuthorController = require("./../controllers/author_controller");
+const express = require('express') // Require in express
+const router = express.Router() // Requiring in the router from express  dont forget the ()
+const AuthorController = require('./../controllers/author_controller') // Requiring in the Author controller
 
-router.get("/", AuthorController.index);
+// Show all authors
+router.get('/', AuthorController.index)
 
-router.post("/", AuthorController.create);
+// Create a new author
+router.post('/', AuthorController.create)
 
-router.get("/new", AuthorController.make);
+// Shows the form to create a new author (remember that 'new' is a reserved word in JS so here we chose 'make' instead)
+router.get('/new', AuthorController.make)
 
-router.get("/:id", AuthorController.show);
+// Shows a single author the ':id' is a wild card and is the name of the param getting passed forward to the controller under req.params
+router.get('/:id', AuthorController.show)
 
-router.delete("/:id", AuthorController.destroy);
+// Deletes a single author the ':id' is a wild card
+router.delete('/:id', AuthorController.destroy)
 
-router.put("/:id", AuthorController.update);
+// Updates a single author the ':id' is a wild card
+router.put('/:id', AuthorController.update)
 
-router.patch("/:id", AuthorController.update);
+// Updates a single author the ':id' is a wild card
+router.patch('/:id', AuthorController.update)
 
-router.get("/:id/edit", AuthorController.edit);
+// Shows the form to edit an author the ':id' is a wild card
+router.get('/:id/edit', AuthorController.edit)
 
-module.exports = router;
+module.exports = router // Dont forget to export the router

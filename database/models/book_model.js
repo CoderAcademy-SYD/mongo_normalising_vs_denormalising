@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const BookSchema = require("./../schemas/book_schema");
+const mongoose = require('mongoose') // Require in mongoose
+const BookSchema = require('./../schemas/book_schema') // Require in the book Schema
 
-const BookModel = mongoose.model("book", BookSchema);
+const BookModel = mongoose.model('book', BookSchema) // Create a book model out of the BookSchema
 
-module.exports = BookModel;
+module.exports = BookModel // Export the Book model

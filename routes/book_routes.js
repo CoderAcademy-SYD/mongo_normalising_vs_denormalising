@@ -1,24 +1,33 @@
-const express = require("express");
-const router = express.Router();
-const BookController = require("../controllers/book_controller");
-const CommentController = require("./../controllers/comment_controller");
+const express = require('express') // Require in express
+const router = express.Router() // Requiring in the router from express  dont forget the ()
+const BookController = require('../controllers/book_controller') // Requiring in the Book controller
+const CommentController = require('./../controllers/comment_controller') // Requiring in the Comment controller
 
-router.get("/", BookController.index);
+// Show all books
+router.get('/', BookController.index)
 
-router.post("/", BookController.create);
+// Create a new book
+router.post('/', BookController.create)
 
-router.get("/new", BookController.make);
+// Shows the form to create a new book (remember that 'new' is a reserved word in JS so here we chose 'make' instead)
+router.get('/new', BookController.make)
 
-router.get("/:id", BookController.show);
+// Shows a single book the ':id' is a wild card
+router.get('/:id', BookController.show)
 
-router.delete("/:id", BookController.destroy);
+// Deletes a single book the ':id' is a wild card
+router.delete('/:id', BookController.destroy)
 
-router.put("/:id", BookController.update);
+// Updates a single book the ':id' is a wild card
+router.put('/:id', BookController.update)
 
-router.patch("/:id", BookController.update);
+// Updates a single book the ':id' is a wild card
+router.patch('/:id', BookController.update)
 
-router.get("/:id/edit", BookController.edit);
+// Shows the form to edit a book the ':id' is a wild card
+router.get('/:id/edit', BookController.edit)
 
-router.post("/:bookId/comment", CommentController.create);
+// Creates a comment for a book the ':id' is a wild card
+router.post('/:bookId/comment', CommentController.create)
 
-module.exports = router;
+module.exports = router // Dont forget to export the router

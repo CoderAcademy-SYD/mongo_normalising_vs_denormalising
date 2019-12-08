@@ -2,14 +2,17 @@
 
 <a href="/authors/new">Create New Author</a>
 
+{{!-- The 'this' in this context refers to the specific author being handled at the time in the loop --}}
+
 {{#each authors}}
-    <div>
-        <p>Name: {{ this.name }}</p>
-        <p>Bio: {{ this.bio }}</p>
-        <p>Gender: {{ this.gender }}</p>
-    </div>
-    <a href="/authors/{{this._id}}">View Author</a>
-    <a href="/authors/{{this._id}}?_method=DELETE">Delete Author</a>
-    <hr />
+<div>
+    <p>Name: {{ this.name }}</p>
+    <p>Bio: {{ this.bio }}</p>
+    <p>Gender: {{ this.gender }}</p>
+</div>
+<a href="/authors/{{this._id}}">View Author</a>
+{{!-- notice the "?_method=DELETE" this must be added to use a delete verb --}}
+<a href="/authors/{{this._id}}?_method=DELETE">Delete Author</a>
+<hr />
 
 {{/each}}
